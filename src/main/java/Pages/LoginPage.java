@@ -14,13 +14,13 @@ public class LoginPage {
     @FindBy(id = "sign_in_button")
     MobileElement gotoLogin;
 
-    @FindBy(xpath = "//android.widget.EditText")
+    @FindBy(xpath = "//android.widget.EditText[@text=’username’]")
     MobileElement username;
 
     @FindBy(xpath = "//android.widget.Button[@text='Continue']")
     MobileElement continueButton;
 
-    @FindBy(xpath = "//android.widget.EditText")
+    @FindBy(xpath = "//android.widget.EditText[@text=’password’]")
     MobileElement password;
 
     @FindBy(xpath = "//android.widget.Button[@text='Sign-In']")

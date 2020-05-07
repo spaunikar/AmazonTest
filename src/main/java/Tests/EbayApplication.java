@@ -18,6 +18,9 @@ public class EbayApplication extends MobileBaseUtility {
     private String username = "abc@gmail.com";
     private String password = "password";
 
+    /*
+    *This method read input form given external source
+    */
     @BeforeMethod
     public void setup() throws IOException {
 
@@ -37,9 +40,26 @@ public class EbayApplication extends MobileBaseUtility {
 
 
     @Test
-    public void verifyEbayApplicationItemPurchase() throws InterruptedException {
+    public void verifyEbayApplicationItemPurchase() {
 
         Log.startTestCase("verifyEbayApplicationItemPurchase");
+
+        loginToAmazon();
+
+        Log.info("Login to amazon application");
+
+        purchaseItem();
+
+        Log.info("search and purchase item");
+
+        Log.endTestCase();
+
+    }
+
+    /*
+     *This method will login to amazon application
+     */
+    public void loginToAmazon() {
 
         LoginPage login = new LoginPage(driver);
         login.gotoLoginPage().click();
@@ -49,6 +69,12 @@ public class EbayApplication extends MobileBaseUtility {
         login.enterPassword().click();
         login.enterPassword().sendKeys(password);
         login.loginToAmazon().click();
+    }
+
+    /*
+     *This method will search an item and go to checkout page
+     */
+    public void purchaseItem() {
 
         SearchResult searchResult = new SearchResult(driver);
         Boolean condition = searchResult.searchElement().isDisplayed();
@@ -59,12 +85,11 @@ public class EbayApplication extends MobileBaseUtility {
         Boolean buyCondition = searchResult.checkBuyingOption().isDisplayed();
         Assert.assertTrue(buyCondition);
         searchResult.checkBuyingOption().click();
-
-        Log.endTestCase();
-
     }
 
-
+    /*
+     * This will kill the application after test case completion
+     */
     @AfterMethod
     public void teardown() {
 
