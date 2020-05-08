@@ -24,7 +24,7 @@ public class ExtentHelper extends MobileBaseUtility {
     private static ExtentTest testinfo;
     private static ExtentHtmlReporter htmlReporter;
 
-    public ExtentHelper() throws IOException {
+    public ExtentHelper() {
     }
 
 

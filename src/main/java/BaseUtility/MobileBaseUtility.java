@@ -73,8 +73,9 @@ public class MobileBaseUtility {
 
 
     //Capture Screenshot for failed testCases
+    //Params : result - it gives test case pass/fail status
     @AfterMethod
-    public void screenshotTest(ITestResult result) throws IOException {
+    public void screenshotTest(ITestResult result) {
 
         try {
             if (result.getStatus() == ITestResult.FAILURE) {

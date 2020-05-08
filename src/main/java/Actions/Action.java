@@ -10,6 +10,10 @@ public class Action extends MobileBaseUtility {
 
     /*
     ----> swipe function is used to swipe at all directions based on the co-ordinates passed to it
+    * params : startx - starting point for x axis
+    * params : starty - starting point for y axis
+    * params : endx - end point for x axis
+    * params : endy -end point for y axis
      */
     public static void swipe(int startx, int starty, int endx, int endy) {
 
@@ -19,7 +23,9 @@ public class Action extends MobileBaseUtility {
     }
 
     /*
-    ---->this function used to swipe vertically based on percentage
+    * This function used to swipe vertically based on percentage
+    * params : startpercentage - starting percentage
+    * params : endpercentage - End percentage
      */
     public static void verticalSwipe(double startpercentage, double endpercentage) {
 
@@ -36,7 +42,9 @@ public class Action extends MobileBaseUtility {
     }
 
     /*
-    ---->this function used to swipe horizontally based on percentage
+     * This function used to swipe horizontally based on percentage
+     * params : startpercentage - starting percentage
+     * params : endpercentage - End percentage
      */
     public static void horizontalSwipe(double startpercentage, double endpercentage) {
 
@@ -48,7 +56,6 @@ public class Action extends MobileBaseUtility {
         TouchAction test = new TouchAction(driver);
 
         test.press(point(startpoint, Height)).moveTo(point(endpoint, Height)).perform();
-
 
     }
 

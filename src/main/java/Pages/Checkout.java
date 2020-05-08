@@ -22,6 +22,7 @@ public class Checkout {
 
 
     // constructor method
+    // params - driver - instance of driver
     public Checkout(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);

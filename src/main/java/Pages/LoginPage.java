@@ -28,6 +28,7 @@ public class LoginPage {
 
 
     // constructor method
+    // params - driver - instance of driver
     public LoginPage(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
