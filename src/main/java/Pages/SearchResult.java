@@ -22,6 +22,7 @@ public class SearchResult {
 
 
     // constructor method
+    // params - driver - instance of driver
     public SearchResult(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);

@@ -18,7 +18,7 @@ public class Log {
 
 
     // This is to print log for the beginning of the test case, as we usually run so many test cases as a test suite
-
+    // params : sTestCaseName - test case name
     public static void startTestCase(String sTestCaseName) {
 
         System.out.print("\n");

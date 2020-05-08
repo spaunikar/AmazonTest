@@ -15,7 +15,12 @@ public class ReadFromExcel {
 
     private String rowValue = null;
 
-
+    /*
+     * This method used to read data from given excel
+     * params : filePath - path of the file
+     * params : fileName - name of the file
+     * params : sheetName - name of the sheet
+     */
     public String readExcel(String filePath, String fileName, String sheetName) throws IOException {
 
         //Create an object of File class to open xlsx file

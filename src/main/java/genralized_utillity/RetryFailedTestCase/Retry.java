@@ -12,6 +12,8 @@ public class Retry implements IRetryAnalyzer {
     private int count = 0;
 
     @Override
+    //This method used to retry failed case
+    //params: iTestResult - failed test case result
     public boolean retry(ITestResult iTestResult) {
 
         if (!iTestResult.isSuccess()) {                      //Check if test not succeed

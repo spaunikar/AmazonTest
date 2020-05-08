@@ -24,7 +24,12 @@ public class ExtentReporterNG implements IReporter {
 
     private ExtentReports extent;
 
-
+    /*
+     * this method will use to generate report
+     * * params - xmlSuites - suites from xmlfile
+     * * params - suites - suites from class file
+     * * params - outputDirectory - directory where report will be saved
+     */
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
         init();
 
@@ -48,7 +53,9 @@ public class ExtentReporterNG implements IReporter {
         extent.flush();
     }
 
-
+    /*
+     * this method will generate report path and naming, timestamps, ect
+     */
     private void init() {
 
         String dateName = new SimpleDateFormat("yyyy-MM-dd::hh-mm").format(new Date());
@@ -63,6 +70,11 @@ public class ExtentReporterNG implements IReporter {
         extent.attachReporter(htmlReporter);
         extent.setReportUsesManualConfiguration(true);
     }
+    /*
+     * this method will use to build the nodes
+     * params - tests - test case name from resultSet
+     * params - status - test case status
+     */
 
     private void buildTestNodes(IResultMap tests, Status status) {
         ExtentTest test;
@@ -94,7 +106,10 @@ public class ExtentReporterNG implements IReporter {
             }
         }
     }
-
+    /*
+     * this method get current timestamp
+     * params : millis - time in mili seconds
+     */
     private Date getTime(long millis) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(millis);
